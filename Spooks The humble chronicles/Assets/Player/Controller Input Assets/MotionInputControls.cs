@@ -113,6 +113,14 @@ public class @MotionInputControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Run"",
+                    ""type"": ""Button"",
+                    ""id"": ""af4c8e17-7bd7-4fe1-8d41-0c022ee88b72"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -247,6 +255,17 @@ public class @MotionInputControls : IInputActionCollection, IDisposable
                     ""action"": ""Block"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""78f7c61d-572e-4e47-9e04-dc7d4451a521"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Run"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -267,6 +286,7 @@ public class @MotionInputControls : IInputActionCollection, IDisposable
         m_MotionControls_SheaveSword = m_MotionControls.FindAction("SheaveSword", throwIfNotFound: true);
         m_MotionControls_SheaveShield = m_MotionControls.FindAction("SheaveShield", throwIfNotFound: true);
         m_MotionControls_Block = m_MotionControls.FindAction("Block", throwIfNotFound: true);
+        m_MotionControls_Run = m_MotionControls.FindAction("Run", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -328,6 +348,7 @@ public class @MotionInputControls : IInputActionCollection, IDisposable
     private readonly InputAction m_MotionControls_SheaveSword;
     private readonly InputAction m_MotionControls_SheaveShield;
     private readonly InputAction m_MotionControls_Block;
+    private readonly InputAction m_MotionControls_Run;
     public struct MotionControlsActions
     {
         private @MotionInputControls m_Wrapper;
@@ -344,6 +365,7 @@ public class @MotionInputControls : IInputActionCollection, IDisposable
         public InputAction @SheaveSword => m_Wrapper.m_MotionControls_SheaveSword;
         public InputAction @SheaveShield => m_Wrapper.m_MotionControls_SheaveShield;
         public InputAction @Block => m_Wrapper.m_MotionControls_Block;
+        public InputAction @Run => m_Wrapper.m_MotionControls_Run;
         public InputActionMap Get() { return m_Wrapper.m_MotionControls; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -389,6 +411,9 @@ public class @MotionInputControls : IInputActionCollection, IDisposable
                 @Block.started -= m_Wrapper.m_MotionControlsActionsCallbackInterface.OnBlock;
                 @Block.performed -= m_Wrapper.m_MotionControlsActionsCallbackInterface.OnBlock;
                 @Block.canceled -= m_Wrapper.m_MotionControlsActionsCallbackInterface.OnBlock;
+                @Run.started -= m_Wrapper.m_MotionControlsActionsCallbackInterface.OnRun;
+                @Run.performed -= m_Wrapper.m_MotionControlsActionsCallbackInterface.OnRun;
+                @Run.canceled -= m_Wrapper.m_MotionControlsActionsCallbackInterface.OnRun;
             }
             m_Wrapper.m_MotionControlsActionsCallbackInterface = instance;
             if (instance != null)
@@ -429,6 +454,9 @@ public class @MotionInputControls : IInputActionCollection, IDisposable
                 @Block.started += instance.OnBlock;
                 @Block.performed += instance.OnBlock;
                 @Block.canceled += instance.OnBlock;
+                @Run.started += instance.OnRun;
+                @Run.performed += instance.OnRun;
+                @Run.canceled += instance.OnRun;
             }
         }
     }
@@ -447,5 +475,6 @@ public class @MotionInputControls : IInputActionCollection, IDisposable
         void OnSheaveSword(InputAction.CallbackContext context);
         void OnSheaveShield(InputAction.CallbackContext context);
         void OnBlock(InputAction.CallbackContext context);
+        void OnRun(InputAction.CallbackContext context);
     }
 }

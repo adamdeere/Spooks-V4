@@ -23,15 +23,14 @@ public class LocoMotion : MonoBehaviour
         _inputControls.MotionControls.HeavySwing.performed += ctx => PlayerHeavySwing();
         _inputControls.MotionControls.Fireball.performed += ctx => PlayerFireball();
         _inputControls.MotionControls.Block.performed += ctx => PlayerBlock();
-
+        _inputControls.MotionControls.Run.performed += ctx => SetRun(true);
+        _inputControls.MotionControls.Run.canceled += ctx => SetRun(false);
         //_inputControls.MotionControls.ThirdPersonView.performed += ctx => PlayerChangeView();
         //_inputControls.MotionControls.HeavySpellOne.performed += ctx => PlayerHeavyOne();
         //_inputControls.MotionControls.HeavySpellTwo.performed += ctx => PlayerHeavyTwo();
         //_inputControls.MotionControls.SheaveSword.performed += ctx => PlayerSheaveSword();
         //_inputControls.MotionControls.SheaveShield.performed += ctx => PlayerSheaveShield();
     }
-
-   
 
     // Start is called before the first frame update
     void Start()
@@ -66,7 +65,8 @@ public class LocoMotion : MonoBehaviour
         _inputControls.MotionControls.HeavySwing.performed -= ctx => PlayerHeavySwing();
         _inputControls.MotionControls.Fireball.performed -= ctx => PlayerFireball();
         _inputControls.MotionControls.Block.performed -= ctx => PlayerBlock();
-
+        _inputControls.MotionControls.Run.performed += ctx => SetRun(true);
+        _inputControls.MotionControls.Run.canceled += ctx => SetRun(false);
         //_inputControls.MotionControls.ThirdPersonView.performed -= ctx => PlayerChangeView();
         //_inputControls.MotionControls.HeavySpellOne.performed -= ctx => PlayerHeavyOne();
         //_inputControls.MotionControls.HeavySpellTwo.performed -= ctx => PlayerHeavyTwo();
@@ -134,6 +134,10 @@ public class LocoMotion : MonoBehaviour
     }
 
     private void PlayerChangeView()
+    {
+        throw new NotImplementedException();
+    }
+    private void SetRun(bool run)
     {
         throw new NotImplementedException();
     }
