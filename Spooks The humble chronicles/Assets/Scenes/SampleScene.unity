@@ -750,7 +750,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.019999903, y: 2.216, z: -9.24}
+  m_LocalPosition: {x: -0.019999903, y: 2.216, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1009,7 +1009,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593023185}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.34562054, y: 2.3018293, z: -12.874551}
+  m_LocalPosition: {x: -0.34562054, y: 2.3018293, z: -13.634551}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 459450275}
@@ -2443,7 +2443,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2282927196835638583}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: -0.014, z: 0.76}
+  m_LocalPosition: {x: -0, y: -0.014, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2282927196835213695}
@@ -4512,6 +4512,8 @@ GameObject:
   - component: {fileID: 2282927196842893187}
   - component: {fileID: 2282927196835638584}
   - component: {fileID: 2282927196835638585}
+  - component: {fileID: 2282927196835638587}
+  - component: {fileID: 2282927196835638586}
   m_Layer: 9
   m_Name: Male Player
   m_TagString: Untagged
@@ -4554,7 +4556,62 @@ MonoBehaviour:
   - SwordAttackOne
   - SwordAttackTwo
   - SwordAttackThree
-  _magicSpellAnim: []
+  _magicSpellAnim:
+  - FireBallSpell
+  - ClearScreenSpell
+--- !u!114 &2282927196835638586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2282927196835638583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f3a75ebaaa03d94180c577cee7363ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterEffect: {fileID: 0}
+  CharacterAttachPoint: {fileID: 0}
+  CharacterEffect_DestroyTime: 10
+  CharacterEffect2: {fileID: 0}
+  CharacterAttachPoint2: {fileID: 0}
+  CharacterEffect2_DestroyTime: 10
+  MainEffect: {fileID: 1614648838348040, guid: 6b12f08cfea33d1429a5fb9ca7e5f9fe, type: 3}
+  AttachPoint: {fileID: 3281639369841621982}
+  OverrideAttachPointToTarget: {fileID: 0}
+  Effect_DestroyTime: 10
+  AdditionalEffect: {fileID: 0}
+  AdditionalEffectAttachPoint: {fileID: 0}
+  AdditionalEffect_DestroyTime: 10
+  IsMobile: 0
+--- !u!114 &2282927196835638587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2282927196835638583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f3a75ebaaa03d94180c577cee7363ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterEffect: {fileID: 1935630441017222, guid: fe071888711a2464e8505b5a3d8f9183,
+    type: 3}
+  CharacterAttachPoint: {fileID: 3281639369683622715}
+  CharacterEffect_DestroyTime: 10
+  CharacterEffect2: {fileID: 0}
+  CharacterAttachPoint2: {fileID: 0}
+  CharacterEffect2_DestroyTime: 10
+  MainEffect: {fileID: 1748139164946814, guid: 4f14e37b24a0f9c41a81220f59ae87f6, type: 3}
+  AttachPoint: {fileID: 4468948338392365581}
+  OverrideAttachPointToTarget: {fileID: 0}
+  Effect_DestroyTime: 3
+  AdditionalEffect: {fileID: 0}
+  AdditionalEffectAttachPoint: {fileID: 0}
+  AdditionalEffect_DestroyTime: 10
+  IsMobile: 0
 --- !u!1 &2282927196835638593
 GameObject:
   m_ObjectHideFlags: 0
@@ -6778,7 +6835,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3281639369683622715}
   m_Layer: 9
-  m_Name: MagicEffectPoint
+  m_Name: HandEffectPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6792,7 +6849,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3281639369683622714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.017, y: 0.003, z: 0.033}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2282927196835213619}
@@ -7039,13 +7096,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7856198997078756864}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0.49463275, y: 0.5750861, z: 0.004572053, w: 0.65160847}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2282927196835213619}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -40.532, y: 101.442, z: -47.79}
 --- !u!4 &4986354743158429355
 Transform:
   m_ObjectHideFlags: 0
@@ -8050,7 +8107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4468948338392365581}
   m_Layer: 9
-  m_Name: Magic Spawn Pos
+  m_Name: EffectPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

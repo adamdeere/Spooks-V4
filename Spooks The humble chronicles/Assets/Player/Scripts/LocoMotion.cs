@@ -116,7 +116,11 @@ public class LocoMotion : MonoBehaviour
     private void Flip()
     {
         _isFaceingRight = !_isFaceingRight;
-        _animator.SetTrigger("RotatePlayer");
+        Quaternion rot = transform.rotation;
+        rot.y *= -1;
+        transform.rotation = rot;
+        //will have to sort this out anopther day
+       // _animator.SetTrigger("RotatePlayer");
     }
     private void MidAnimation()
     {
@@ -129,12 +133,12 @@ public class LocoMotion : MonoBehaviour
 
     private void PlayerFireball()
     {
-        throw new NotImplementedException();
+        _animator.SetTrigger(_magicSpellAnim[0]);
     }
 
     private void PlayerHeavySwing()
     {
-        throw new NotImplementedException();
+        _animator.SetTrigger(_magicSpellAnim[1]);
     }
 
     private void PlayerLightSwing()
