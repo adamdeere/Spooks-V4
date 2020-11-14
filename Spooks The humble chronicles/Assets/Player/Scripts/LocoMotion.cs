@@ -44,9 +44,12 @@ public class LocoMotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetDirection().magnitude >= 0.1f)
+        if (_movePlayer.x > 0.3f || _movePlayer.x < -0.3f)
         {
-            _characterController.Move(GetDirection() * speed * Time.deltaTime);
+            if (GetDirection().magnitude >= 0.1f)
+            {
+                _characterController.Move(GetDirection() * speed * Time.deltaTime);
+            }
         }
     }
 

@@ -23,7 +23,7 @@ public class @MotionInputControls : IInputActionCollection, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""db31c4f8-d19d-4b8c-b3c2-80cd21977ea3"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
+                    ""processors"": ""StickDeadzone"",
                     ""interactions"": """"
                 },
                 {
