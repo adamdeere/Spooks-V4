@@ -13,7 +13,7 @@ Material:
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3050
+  m_CustomRenderQueue: 3000
   stringTagMap:
     RenderType: Transparent
   disabledShaderPasses:
@@ -138,6 +138,7 @@ Material:
     - _KKSpecularMixIndirectFactors: {r: 0.65, g: 0.4, b: 0.15, a: 0}
     - _SpecColor: {r: 0.16176468, g: 0.1178291, b: 0.039251722, a: 1}
     - _SpecularColor: {r: 0.30147058, g: 0.29780155, b: 0.2881704, a: 1}
+  m_BuildTextureStacks: []
 --- !u!114 &5102366057326329724
 MonoBehaviour:
   m_ObjectHideFlags: 11
@@ -150,4 +151,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 1
+  version: 2
