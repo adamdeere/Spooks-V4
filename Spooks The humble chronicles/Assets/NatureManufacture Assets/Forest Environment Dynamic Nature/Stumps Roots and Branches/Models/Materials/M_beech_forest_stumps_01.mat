@@ -186,7 +186,7 @@ Material:
     - _Anisotropy: 0
     - _BaseAORemapMax: 1
     - _BaseAORemapMin: 0
-    - _BaseMetallic: 1
+    - _BaseMetallic: 0.287
     - _BaseNormalScale: 1
     - _BaseSmoothnessRemapMax: 1
     - _BaseSmoothnessRemapMin: 0
@@ -365,6 +365,7 @@ Material:
     - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
     - _WetColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 0}
+  m_BuildTextureStacks: []
 --- !u!114 &7630502950719785095
 MonoBehaviour:
   m_ObjectHideFlags: 11

@@ -377,7 +377,7 @@ Material:
     - _CoverHeightMapMax: 1
     - _CoverHeightMapMin: 0
     - _CoverHeightMapOffset: 0
-    - _CoverMaskPower: 0
+    - _CoverMaskPower: 0.53
     - _CoverMetallic: 1
     - _CoverNormalBlendHardness: 1
     - _CoverNormalScale: 1
@@ -689,6 +689,7 @@ Material:
     - _UVMappingMaskBlendMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
     - _WetColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 0}
+  m_BuildTextureStacks: []
 --- !u!114 &612130363812214192
 MonoBehaviour:
   m_ObjectHideFlags: 11
