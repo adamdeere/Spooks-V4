@@ -2,7 +2,14 @@
 {
     void TakeSwordDamage(float damage);
 }
+public interface IShieldDamage
+{
 
+}
+public interface IToggleShield
+{
+    void ToggleShieldCollider(bool toggle);
+}
 public interface IMagicDamage
 {
     void TakeMagicDamage(float damage);

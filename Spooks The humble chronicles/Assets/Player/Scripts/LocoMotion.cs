@@ -7,6 +7,7 @@ public class LocoMotion : MonoBehaviour
     [SerializeField] private string[] _swordSwingAnim;
     [SerializeField] private string[] _magicSpellAnim;
     [SerializeField] private GameObject _swordObject;
+    [SerializeField] private GameObject _ShieldObject;
     private MotionInputControls _inputControls;
     private Vector2 _movePlayer;
 
@@ -17,6 +18,7 @@ public class LocoMotion : MonoBehaviour
 
     private bool _isMidAnim;
     private IDealSwordDamage _SwordDamageInterface;
+    private IToggleShield _ShieldToggleInterface;
     private void Awake()
     {
         _inputControls = new MotionInputControls();
@@ -27,7 +29,8 @@ public class LocoMotion : MonoBehaviour
         _inputControls.MotionControls.LightSwing.performed += ctx => PlayerLightSwing();
         _inputControls.MotionControls.HeavySwing.performed += ctx => PlayerHeavySwing();
         _inputControls.MotionControls.Fireball.performed += ctx => PlayerFireball();
-        _inputControls.MotionControls.Block.performed += ctx => PlayerBlock();
+        _inputControls.MotionControls.Block.performed += ctx => PlayerBlock(true);
+        _inputControls.MotionControls.Block.canceled += ctx => PlayerBlock(false);
         _inputControls.MotionControls.Run.performed += ctx => SetRun(true);
         _inputControls.MotionControls.Run.canceled += ctx => SetRun(false);
         //_inputControls.MotionControls.ThirdPersonView.performed += ctx => PlayerChangeView();
@@ -44,6 +47,7 @@ public class LocoMotion : MonoBehaviour
         _characterController = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
         _SwordDamageInterface = _swordObject.GetComponent<IDealSwordDamage>();
+        _ShieldToggleInterface = _ShieldObject.GetComponent<IToggleShield>();
         _inputControls.Enable();
         _isFacingRight = true;
     }
@@ -89,7 +93,8 @@ public class LocoMotion : MonoBehaviour
         _inputControls.MotionControls.LightSwing.performed -= ctx => PlayerLightSwing();
         _inputControls.MotionControls.HeavySwing.performed -= ctx => PlayerHeavySwing();
         _inputControls.MotionControls.Fireball.performed -= ctx => PlayerFireball();
-        _inputControls.MotionControls.Block.performed -= ctx => PlayerBlock();
+        _inputControls.MotionControls.Block.performed -= ctx => PlayerBlock(true);
+        _inputControls.MotionControls.Block.canceled -= ctx => PlayerBlock(false);
         _inputControls.MotionControls.Run.performed += ctx => SetRun(true);
         _inputControls.MotionControls.Run.canceled += ctx => SetRun(false);
         //_inputControls.MotionControls.ThirdPersonView.performed -= ctx => PlayerChangeView();
@@ -123,9 +128,10 @@ public class LocoMotion : MonoBehaviour
     {
         _isMidAnim = !_isMidAnim;
     }
-    private void PlayerBlock()
+    private void PlayerBlock(bool blocking)
     {
-        throw new NotImplementedException();
+        _animator.SetBool("Blocking", blocking);
+        _ShieldToggleInterface?.ToggleShieldCollider(blocking);
     }
 
     private void PlayerFireball()
