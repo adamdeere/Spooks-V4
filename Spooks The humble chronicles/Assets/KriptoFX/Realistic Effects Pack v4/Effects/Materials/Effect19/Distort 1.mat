@@ -4,10 +4,11 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Distort 1
-  m_Shader: {fileID: 4800000, guid: 3b5eaa5a09e6b204085004ea02b03e38, type: 3}
+  m_Shader: {fileID: 4800000, guid: 83378db669f689947958f425d09f2431, type: 3}
   m_ShaderKeywords: USE_ALPHA_CLIPING _EMISSION _FADING_ON
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
@@ -70,6 +71,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _TurbulenceMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AlphaClip: 100
     - _AlphaDistort: 0
@@ -116,4 +121,6 @@ Material:
     - _FresnelColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _HeightUVScrollDistort: {r: 8, g: 12, b: 0, a: 0}
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _NoiseScale: {r: 1, g: 1, b: 1, a: 0.2}
     - _TintColor: {r: 5.930155, g: 0, b: 0, a: 0.684}
+  m_BuildTextureStacks: []

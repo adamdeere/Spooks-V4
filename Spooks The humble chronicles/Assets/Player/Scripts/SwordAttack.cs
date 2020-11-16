@@ -2,7 +2,7 @@
 
 public class SwordAttack : MonoBehaviour, IDealSwordDamage
 {
-    [SerializeField] private float damagePower = 1;
+    [SerializeField] private float damagePower = 10f;
     private void Start()
     {
         gameObject.SetActive(false);
