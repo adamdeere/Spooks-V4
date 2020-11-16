@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -29,18 +27,17 @@ public class RFX4_PhysicsMotion : MonoBehaviour
 
     [HideInInspector] public float HUE = -1;
 
-    public event EventHandler<RFX4_CollisionInfo> CollisionEnter;
+   // public event EventHandler<RFX4_CollisionInfo> CollisionEnter;
 
     Rigidbody rigid;
     SphereCollider collid;
-    ContactPoint lastContactPoint;
-    Collider lastCollider;
-    Vector3 offsetColliderPoint;
     bool isCollided;
     GameObject targetAnchor;
     bool isInitializedForce;
     float currentSpeedOffset;
     private RFX4_EffectSettings effectSettings;
+
+    public static GetDirection GetplayerDirection;
 
     void OnEnable ()
     {
@@ -79,7 +76,7 @@ public class RFX4_PhysicsMotion : MonoBehaviour
         if (FreezeRotation) rigid.constraints = RigidbodyConstraints.FreezeRotation;
         rigid.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
         rigid.interpolation = RigidbodyInterpolation.Interpolate;
-        rigid.AddForce(transform.forward * (effectSettings.Speed + currentSpeedOffset), ForceMode);
+        rigid.AddForce(GetplayerDirection() * (effectSettings.Speed + currentSpeedOffset), ForceMode);
         isInitializedForce = true;
     }
 
@@ -91,29 +88,24 @@ public class RFX4_PhysicsMotion : MonoBehaviour
             if (!isCollided)
             {
                 isCollided = true;
-                //offsetColliderPoint = contact.otherCollider.transform.position - contact.point;
-                // lastCollider = contact.otherCollider;
-                // lastContactPoint = contact;
                 if (UseTargetPositionAfterCollision)
                 {
                     if (targetAnchor != null) Destroy(targetAnchor);
 
-                    targetAnchor = new GameObject();
-                    targetAnchor.hideFlags = HideFlags.HideAndDontSave;
+                    targetAnchor = new GameObject
+                    {
+                        hideFlags = HideFlags.HideAndDontSave
+                    };
                     targetAnchor.transform.parent = contact.otherCollider.transform;
                     targetAnchor.transform.position = contact.point;
                     targetAnchor.transform.rotation = transform.rotation;
-                    //targetAnchor.transform.LookAt(contact.normal);
                 }
                 
             }
-            var handler = CollisionEnter;
-            if (handler != null)
-                handler(this, new RFX4_CollisionInfo { HitPoint = contact.point, HitCollider = contact.otherCollider, HitGameObject = contact.otherCollider.gameObject});
 
             if (EffectOnCollision != null)
             {
-                var instance = Instantiate(EffectOnCollision, contact.point, new Quaternion()) as GameObject;
+                var instance = Instantiate(EffectOnCollision, contact.point, new Quaternion());
 
                 if (HUE > -0.9f) RFX4_ColorHelper.ChangeObjectColorByHUE(instance, HUE);
                 
@@ -137,6 +129,8 @@ public class RFX4_PhysicsMotion : MonoBehaviour
 
         if (rigid != null) Destroy(rigid);
         if (collid != null) Destroy(collid);
+        collision.collider.gameObject.GetComponent<ITakeSwordDamage>()?.TakeSwordDamage(30);
+        Destroy(gameObject);
     }
 
 

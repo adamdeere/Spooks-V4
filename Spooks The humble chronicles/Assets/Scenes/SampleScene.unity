@@ -703,7 +703,7 @@ MonoBehaviour:
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_CameraDistance: 6.495449
+  m_CameraDistance: 7.5
   m_DeadZoneWidth: 0.11
   m_DeadZoneHeight: 0.31
   m_DeadZoneDepth: 30
@@ -1224,7 +1224,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.020000001, y: 2.2041707, z: -6.495449}
+  m_LocalPosition: {x: 0.020000001, y: 2.2041707, z: -7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1443,7 +1443,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593023185}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.30562064, y: 2.29, z: -10.13}
+  m_LocalPosition: {x: -0.30562064, y: 2.29, z: -11.134551}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 459450275}
@@ -5052,6 +5052,7 @@ GameObject:
   - component: {fileID: 2282927196835638584}
   - component: {fileID: 2282927196835638585}
   - component: {fileID: 2282927196835638586}
+  - component: {fileID: 2282927196835638587}
   m_Layer: 9
   m_Name: Male Player
   m_TagString: Untagged
@@ -5112,6 +5113,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lols: im hurt
+--- !u!114 &2282927196835638587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2282927196835638583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c613b4dc5d9b9a240950d767482bc295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _HandPositionTransform: {fileID: 3281639369683622715}
+  _ShootPosition: {fileID: 4468948338392365581}
+  _HandEffectPrefab: {fileID: 1935630441017222, guid: fe071888711a2464e8505b5a3d8f9183,
+    type: 3}
+  _FireballPrefab: {fileID: 1748139164946814, guid: 4f14e37b24a0f9c41a81220f59ae87f6,
+    type: 3}
 --- !u!1 &2282927196835638593
 GameObject:
   m_ObjectHideFlags: 0
@@ -8675,6 +8694,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1935510819210939020, guid: ca32c762e7689f4438862b5542e39822,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 2658022588259030371, guid: ca32c762e7689f4438862b5542e39822,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.38
+      objectReference: {fileID: 0}
     - target: {fileID: 8029564879547781192, guid: ca32c762e7689f4438862b5542e39822,
         type: 3}
       propertyPath: m_Name

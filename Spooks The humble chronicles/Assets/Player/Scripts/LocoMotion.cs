@@ -19,6 +19,7 @@ public class LocoMotion : MonoBehaviour
     private bool _isMidAnim;
     private IDealSwordDamage _SwordDamageInterface;
     private IToggleShield _ShieldToggleInterface;
+   
     private void Awake()
     {
         _inputControls = new MotionInputControls();
@@ -43,7 +44,7 @@ public class LocoMotion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        RFX4_PhysicsMotion.GetplayerDirection += GetFireballDirection;
         _characterController = GetComponent<CharacterController>();
         _animator = GetComponent<Animator>();
         _SwordDamageInterface = _swordObject.GetComponent<IDealSwordDamage>();
@@ -57,7 +58,7 @@ public class LocoMotion : MonoBehaviour
     {
         if (_movePlayer.x > 0.3f || _movePlayer.x < -0.3f)
         {
-            if (GetDirection().magnitude >= 0.1f)
+            if (GetControllerDirection().magnitude >= 0.1f)
             {
                
                     if (!_isRunning)
@@ -70,7 +71,7 @@ public class LocoMotion : MonoBehaviour
                     else if (_movePlayer.x > 0 && !_isFacingRight)
                         Flip();
 
-                    _characterController.Move(GetDirection() * speed * Time.deltaTime);
+                    _characterController.Move(GetControllerDirection() * speed * Time.deltaTime);
                 
             }
         }
@@ -102,10 +103,10 @@ public class LocoMotion : MonoBehaviour
         //_inputControls.MotionControls.HeavySpellTwo.performed -= ctx => PlayerHeavyTwo();
         //_inputControls.MotionControls.SheaveSword.performed -= ctx => PlayerSheaveSword();
         //_inputControls.MotionControls.SheaveShield.performed -= ctx => PlayerSheaveShield();
-
+        RFX4_PhysicsMotion.GetplayerDirection += GetFireballDirection;
     }
 
-    private Vector3 GetDirection()
+    private Vector3 GetControllerDirection()
     {
         Vector3 dir;
         dir.x = _movePlayer.x;
@@ -114,6 +115,13 @@ public class LocoMotion : MonoBehaviour
         return dir.normalized;
     }
 
+    public Vector3 GetFireballDirection()
+    {
+        if (_isFacingRight)
+            return Vector3.right;
+        else
+            return Vector3.left;
+    }
     //TODO clean up the 180 animation
     private void Flip()
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class DamageScript : MonoBehaviour, ITakeEnemyDamage
+public class DamagePlayer : MonoBehaviour, ITakeEnemyDamage
 {
     [SerializeField] private string lols;
     public void TakeEnemyDamage(float damage)
