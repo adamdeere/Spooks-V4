@@ -8,10 +8,10 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Distort 1
-  m_Shader: {fileID: 4800000, guid: 83378db669f689947958f425d09f2431, type: 3}
+  m_Shader: {fileID: 4800000, guid: 3b5eaa5a09e6b204085004ea02b03e38, type: 3}
   m_ShaderKeywords: USE_ALPHA_CLIPING _EMISSION _FADING_ON
   m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -80,7 +80,7 @@ Material:
     - _AlphaDistort: 0
     - _BumpAmt: 5000
     - _BumpScale: 1
-    - _CullMode: 0
+    - _CullMode: 1
     - _Cutoff: 0.5
     - _Cutout: 1
     - _CutoutThreshold: 0.015

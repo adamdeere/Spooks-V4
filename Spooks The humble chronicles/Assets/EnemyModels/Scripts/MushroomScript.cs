@@ -10,11 +10,13 @@ public class MushroomScript : MonoBehaviour, ITakeSwordDamage
         _health -= damage;
         if (_health <= 0)
         {
-            _animator.SetTrigger("dead");
+            _animator.SetTrigger("Death");
+            Destroy(gameObject.GetComponent<SphereCollider>());
+            Destroy(gameObject.GetComponent<Rigidbody>());
         }
         else
         {
-            _animator.SetTrigger("hit");
+            _animator.SetTrigger("Hit");
         }
     }
 

@@ -43,7 +43,19 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _DistortTex1:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DistortTex2:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -52,10 +64,14 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: f54d5a4f0ea60b349b84ab225d1f2667, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3d20426b5103a274bbd72dd765b27174, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -75,7 +91,7 @@ Material:
     - _AlphaClip: 100
     - _BumpAmt: 30
     - _BumpScale: 1
-    - _CullMode: 2
+    - _CullMode: 1
     - _Cutoff: 0.5
     - _Cutout: 1
     - _CutoutThreshold: 0.015
@@ -83,6 +99,7 @@ Material:
     - _DistortScale: 0.5
     - _Distortion: 30
     - _DstBlend: 0
+    - _EmissionDepth: 10
     - _FresnelDistort: 1500
     - _FresnelInvert: 1
     - _FresnelPow: 5
@@ -92,10 +109,13 @@ Material:
     - _InvFade: 2
     - _Metallic: 0
     - _Mode: 0
+    - _NoiseDepth: 10
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _RefractiveStrength: 0
     - _SrcBlend: 1
+    - _Steps: 10
+    - _StepsBin: 10
     - _TintDistortion: 1
     - _UVSec: 0
     - _UseAlphaCliping: 1
@@ -103,6 +123,7 @@ Material:
     - _UseCutout: 0
     - _UseFresnel: 0
     - _UseHeight: 0
+    - _UseLight: 0
     - _UseMainTex: 0
     - _UseRefractive: 0
     - _UseSoft: 0
@@ -111,9 +132,12 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _CutoutColor: {r: 1, g: 1, b: 1, a: 1}
+    - _DistortSpeed: {r: 1, g: 0.1, b: 1, a: 0.1}
+    - _Emission: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FresnelColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     - _HeightUVScrollDistort: {r: 8, g: 12, b: 0, a: 0}
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
+    - _NoiseSpeedScale: {r: 1, g: 1, b: 1, a: 1}
     - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
   m_BuildTextureStacks: []

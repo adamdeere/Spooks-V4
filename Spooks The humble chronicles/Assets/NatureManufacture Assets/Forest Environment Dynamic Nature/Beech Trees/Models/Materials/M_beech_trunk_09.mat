@@ -333,6 +333,7 @@ Material:
     - _BarkNormalScale: 1
     - _BarkSmoothnessRemapMax: 1
     - _BarkSmoothnessRemapMin: 0
+    - _BarkUseUV3: 1
     - _BlendMode: 0
     - _CoatMask: 0
     - _CullMode: 2
@@ -406,6 +407,7 @@ Material:
     - _HeightCenter1: 0.5
     - _HeightCenter2: 0.5
     - _HeightCenter3: 0.5
+    - _HeightDrag: 0
     - _HeightMapParametrization: 0
     - _HeightMapParametrization0: 0
     - _HeightMapParametrization1: 0
@@ -562,11 +564,11 @@ Material:
     - _TransparentDepthPrepassEnable: 0
     - _TransparentSortPriority: 0
     - _TrunkAORemapMax: 1
-    - _TrunkAORemapMin: 0
+    - _TrunkAORemapMin: 0.031
     - _TrunkMetallic: 1
     - _TrunkNormalScale: 1
     - _TrunkSmoothnessRemapMax: 1
-    - _TrunkSmoothnessRemapMin: 0
+    - _TrunkSmoothnessRemapMin: 0.038
     - _UVBase: 0
     - _UVBase0: 0
     - _UVBase1: 3
@@ -592,6 +594,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BarkBaseColor: {r: 0.9056604, g: 0.9022878, b: 0.89284444, a: 1}
+    - _BarkBlendMaskTilingOffset: {r: 1, g: 1, b: 0, a: 0}
     - _BarkTilingOffset: {r: 1, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor0: {r: 1, g: 1, b: 1, a: 1}
@@ -632,3 +635,4 @@ Material:
     - _UVMappingMask3: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskBlendMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
