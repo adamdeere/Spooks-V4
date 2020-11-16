@@ -1,7 +1,4 @@
-using System;
 using UnityEngine;
-using System.Collections;
-using System.Runtime.Serialization.Formatters;
 
 public class RFX4_DemoGUI : MonoBehaviour
 {
@@ -51,63 +48,63 @@ public class RFX4_DemoGUI : MonoBehaviour
 
     bool isButtonPressed;
 
-    private void OnGUI()
-    {
-        if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.DownArrow))
-            isButtonPressed = false;
+    //private void OnGUI()
+    //{
+    //    if (Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.DownArrow))
+    //        isButtonPressed = false;
 
-        if (GUI.Button(new Rect(10*dpiScale, 15*dpiScale, 135*dpiScale, 37*dpiScale), "PREVIOUS EFFECT") || (!isButtonPressed && Input.GetKeyDown(KeyCode.LeftArrow)))
-        {
-            isButtonPressed = true;
-            ChangeCurrent(-1);
-        }
-        if (GUI.Button(new Rect(160*dpiScale, 15*dpiScale, 135*dpiScale, 37*dpiScale), "NEXT EFFECT") || (!isButtonPressed && Input.GetKeyDown(KeyCode.RightArrow)))
-        {
-            isButtonPressed = true;
-            ChangeCurrent(+1);
-        }
-        var offset = 0f;
+    //    if (GUI.Button(new Rect(10*dpiScale, 15*dpiScale, 135*dpiScale, 37*dpiScale), "PREVIOUS EFFECT") || (!isButtonPressed && Input.GetKeyDown(KeyCode.LeftArrow)))
+    //    {
+    //        isButtonPressed = true;
+    //        ChangeCurrent(-1);
+    //    }
+    //    if (GUI.Button(new Rect(160*dpiScale, 15*dpiScale, 135*dpiScale, 37*dpiScale), "NEXT EFFECT") || (!isButtonPressed && Input.GetKeyDown(KeyCode.RightArrow)))
+    //    {
+    //        isButtonPressed = true;
+    //        ChangeCurrent(+1);
+    //    }
+    //    var offset = 0f;
       
-        if (GUI.Button(new Rect(10*dpiScale, 63*dpiScale + offset, 285*dpiScale, 37*dpiScale), "Day / Night") || (!isButtonPressed && Input.GetKeyDown(KeyCode.DownArrow)))
-        {
-            ChangeDayNight();
-        }
+    //    if (GUI.Button(new Rect(10*dpiScale, 63*dpiScale + offset, 285*dpiScale, 37*dpiScale), "Day / Night") || (!isButtonPressed && Input.GetKeyDown(KeyCode.DownArrow)))
+    //    {
+    //        ChangeDayNight();
+    //    }
 
-        GUI.Label(new Rect(350 * dpiScale, 15 * dpiScale + offset / 2, 500 * dpiScale, 20 * dpiScale),
-            "press left mouse button for the camera rotating and scroll wheel for zooming", guiStyleHeader);
-        GUI.Label(new Rect(350*dpiScale, 35*dpiScale + offset / 2, 160*dpiScale, 20*dpiScale),
-            "prefab name is: " + Prefabs[currentNomber].name, guiStyleHeader);
+    //    GUI.Label(new Rect(350 * dpiScale, 15 * dpiScale + offset / 2, 500 * dpiScale, 20 * dpiScale),
+    //        "press left mouse button for the camera rotating and scroll wheel for zooming", guiStyleHeader);
+    //    GUI.Label(new Rect(350*dpiScale, 35*dpiScale + offset / 2, 160*dpiScale, 20*dpiScale),
+    //        "prefab name is: " + Prefabs[currentNomber].name, guiStyleHeader);
         
 
-       // GUI.DrawTexture(new Rect(12*dpiScale, 120*dpiScale + offset, 285*dpiScale, 15*dpiScale), HUETexture, ScaleMode.StretchToFill, false, 0);
+    //   // GUI.DrawTexture(new Rect(12*dpiScale, 120*dpiScale + offset, 285*dpiScale, 15*dpiScale), HUETexture, ScaleMode.StretchToFill, false, 0);
        
 
-        //        float oldColorHUE = colorHUE;
-        //colorHUE = GUI.HorizontalSlider(new Rect(12*dpiScale, 140*dpiScale + offset, 285*dpiScale, 15*dpiScale), colorHUE, 0, 360);
-        //if (Mathf.Abs(oldColorHUE - colorHUE) > 0.001)
-        //{
-        //    RFX4_ColorHelper.ChangeObjectColorByHUE(currentInstance, colorHUE / 360f);
-        //    var transformMotion = currentInstance.GetComponentInChildren<RFX4_PhysicsMotion>(true);
-        //    if (transformMotion != null)
-        //    {
-        //        transformMotion.HUE = colorHUE / 360f;
-        //        //foreach (var collidedInstance in transformMotion.CollidedInstances)
-        //        //{
-        //        //    if(collidedInstance!=null) RFX4_ColorHelper.ChangeObjectColorByHUE(collidedInstance, colorHUE / 360f);
-        //        //}
-        //    }
+    //    //        float oldColorHUE = colorHUE;
+    //    //colorHUE = GUI.HorizontalSlider(new Rect(12*dpiScale, 140*dpiScale + offset, 285*dpiScale, 15*dpiScale), colorHUE, 0, 360);
+    //    //if (Mathf.Abs(oldColorHUE - colorHUE) > 0.001)
+    //    //{
+    //    //    RFX4_ColorHelper.ChangeObjectColorByHUE(currentInstance, colorHUE / 360f);
+    //    //    var transformMotion = currentInstance.GetComponentInChildren<RFX4_PhysicsMotion>(true);
+    //    //    if (transformMotion != null)
+    //    //    {
+    //    //        transformMotion.HUE = colorHUE / 360f;
+    //    //        //foreach (var collidedInstance in transformMotion.CollidedInstances)
+    //    //        //{
+    //    //        //    if(collidedInstance!=null) RFX4_ColorHelper.ChangeObjectColorByHUE(collidedInstance, colorHUE / 360f);
+    //    //        //}
+    //    //    }
 
-        //    var rayCastCollision = currentInstance.GetComponentInChildren<RFX4_RaycastCollision>(true);
-        //    if (rayCastCollision != null)
-        //    {
-        //        rayCastCollision.HUE = colorHUE / 360f;
-        //        foreach (var collidedInstance in rayCastCollision.CollidedInstances)
-        //        {
-        //            if (collidedInstance != null) RFX4_ColorHelper.ChangeObjectColorByHUE(collidedInstance, colorHUE / 360f);
-        //        }
-        //    }
-        //}
-    }
+    //    //    var rayCastCollision = currentInstance.GetComponentInChildren<RFX4_RaycastCollision>(true);
+    //    //    if (rayCastCollision != null)
+    //    //    {
+    //    //        rayCastCollision.HUE = colorHUE / 360f;
+    //    //        foreach (var collidedInstance in rayCastCollision.CollidedInstances)
+    //    //        {
+    //    //            if (collidedInstance != null) RFX4_ColorHelper.ChangeObjectColorByHUE(collidedInstance, colorHUE / 360f);
+    //    //        }
+    //    //    }
+    //    //}
+    //}
 
     private void ChangeDayNight()
     {

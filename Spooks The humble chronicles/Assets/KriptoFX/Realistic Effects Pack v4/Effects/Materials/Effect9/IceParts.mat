@@ -70,7 +70,7 @@ Material:
     - _RefractiveStrength: -0.75
     - _Shininess: 0.145
     - _Smoothness: 1
-    - _TintDistortion: 1
+    - _TintDistortion: 0.1
     - _UseAlphaCliping: 0
     - _UseBlending: 0
     - _UseCutout: 0
@@ -89,3 +89,4 @@ Material:
     - _ReflectColor: {r: 0.44117644, g: 0.49695733, b: 0.58823526, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _TintColor: {r: 0.4649654, g: 0.55631787, b: 0.7352941, a: 1}
+  m_BuildTextureStacks: []

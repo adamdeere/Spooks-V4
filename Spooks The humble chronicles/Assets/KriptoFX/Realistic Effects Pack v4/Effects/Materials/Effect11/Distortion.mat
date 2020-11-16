@@ -4,13 +4,14 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Distortion
   m_Shader: {fileID: 4800000, guid: 3b5eaa5a09e6b204085004ea02b03e38, type: 3}
-  m_ShaderKeywords: USE_ALPHA_CLIPING _FLIPBOOK_BLENDING
+  m_ShaderKeywords: USE_ALPHA_CLIPING USE_FRESNEL _FLIPBOOK_BLENDING
   m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -100,7 +101,7 @@ Material:
     - _UseAlphaCliping: 1
     - _UseBlending: 1
     - _UseCutout: 0
-    - _UseFresnel: 0
+    - _UseFresnel: 1
     - _UseHeight: 0
     - _UseMainTex: 0
     - _UseRefractive: 0
@@ -115,3 +116,4 @@ Material:
     - _HeightUVScrollDistort: {r: 8, g: 12, b: 0, a: 0}
     - _MainColor: {r: 1, g: 1, b: 1, a: 1}
     - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+  m_BuildTextureStacks: []
