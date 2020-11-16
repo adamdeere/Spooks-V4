@@ -329,7 +329,7 @@ Material:
     - _Base2SmoothnessRemapMin: 0
     - _Base2UsePlanarUV: 1
     - _BaseAORemapMax: 1
-    - _BaseAORemapMin: 0
+    - _BaseAORemapMin: 0.208
     - _BaseMetallic: 1
     - _BaseNormalScale: 1
     - _BaseSmoothnessRemapMax: 1
@@ -624,3 +624,4 @@ Material:
     - _UVMappingMaskBlendMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
     - _WetColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 0}
+  m_BuildTextureStacks: []

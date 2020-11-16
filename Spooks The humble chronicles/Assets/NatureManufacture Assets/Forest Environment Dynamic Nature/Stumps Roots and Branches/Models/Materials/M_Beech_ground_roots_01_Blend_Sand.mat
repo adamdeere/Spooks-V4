@@ -11,8 +11,8 @@ Material:
   m_Shader: {fileID: 4800000, guid: 933fd8ce48b071942b46c0a55d773f93, type: 3}
   m_ShaderKeywords: _DETAIL_MAP0 _DISABLE_DBUFFER _HEIGHTMAP1 _HEIGHT_BASED_BLEND
     _LAYER_MAPPING_PLANAR1 _MASKMAP _MASKMAP0 _MASKMAP1 _NORMALMAP _NORMALMAP0 _NORMALMAP1
-    _NORMALMAP_TANGENT_SPACE _NORMALMAP_TANGENT_SPACE0 _NORMALMAP_TANGENT_SPACE1 _NORMALMAP_TANGENT_SPACE2
-    _NORMALMAP_TANGENT_SPACE3
+    _NORMALMAP_TANGENT_SPACE _NORMALMAP_TANGENT_SPACE0 _NORMALMAP_TANGENT_SPACE1
+    _NORMALMAP_TANGENT_SPACE2 _NORMALMAP_TANGENT_SPACE3
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -332,7 +332,7 @@ Material:
     - _Base2SmoothnessRemapMin: 0
     - _Base2UsePlanarUV: 1
     - _BaseAORemapMax: 1
-    - _BaseAORemapMin: 0
+    - _BaseAORemapMin: 0.049
     - _BaseMetallic: 1
     - _BaseNormalScale: 1
     - _BaseSmoothnessRemapMax: 1
@@ -634,3 +634,4 @@ Material:
     - _UVMappingMaskBlendMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
     - _WetColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 0}
+  m_BuildTextureStacks: []

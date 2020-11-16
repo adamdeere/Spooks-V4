@@ -383,7 +383,7 @@ Material:
     - _CoverUsePlanarUV: 1
     - _Cover_Amount: 2
     - _Cover_Amount_Grow_Speed: 3
-    - _Cover_Max_Angle: 18
+    - _Cover_Max_Angle: 23.2
     - _Cover_Min_Height: -10000
     - _Cover_Min_Height_Blending: 1
     - _CullMode: 2
@@ -704,3 +704,4 @@ Material:
     - _UVMappingMaskBlendMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
     - _WetColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 0}
+  m_BuildTextureStacks: []

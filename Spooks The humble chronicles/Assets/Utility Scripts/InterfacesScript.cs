@@ -1,14 +1,24 @@
-﻿public interface ISwordDamage
+﻿public interface ITakeSwordDamage
 {
-    void DealSwordDamage(float damage);
+    void TakeSwordDamage(float damage);
 }
+public interface IShieldDamage
+{
 
+}
+public interface IToggleShield
+{
+    void ToggleShieldCollider(bool toggle);
+}
 public interface IMagicDamage
 {
-    void DealMagicDamage(float damage);
+    void TakeMagicDamage(float damage);
 }
-
-public interface ITakeDamage
+public interface IDealSwordDamage
+{
+    void ToogleSwordCollider(bool switchOn);
+}
+public interface ITakeEnemyDamage
 {
     void TakeEnemyDamage(float damage);
 }

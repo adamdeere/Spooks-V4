@@ -198,9 +198,9 @@ Material:
     - _AlphaCutoffShadow: 0.5
     - _Anisotropy: 0
     - _BaseAORemapMax: 1
-    - _BaseAORemapMin: 0
+    - _BaseAORemapMin: 0.144
     - _BaseMetallic: 1
-    - _BaseNormalScale: 1
+    - _BaseNormalScale: 2.19
     - _BaseSmoothnessRemapMax: 1
     - _BaseSmoothnessRemapMin: 0
     - _BaseUsePlanarUV: 0
@@ -378,3 +378,4 @@ Material:
     - _UVMappingMask: {r: 1, g: 0, b: 0, a: 0}
     - _UVMappingMaskEmissive: {r: 1, g: 0, b: 0, a: 0}
     - _WetColor: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 0}
+  m_BuildTextureStacks: []
