@@ -566,7 +566,7 @@ Material:
     - _TrunkAORemapMax: 1
     - _TrunkAORemapMin: 0
     - _TrunkMetallic: 1
-    - _TrunkNormalScale: 1
+    - _TrunkNormalScale: 0.81
     - _TrunkSmoothnessRemapMax: 1
     - _TrunkSmoothnessRemapMin: 0
     - _UVBase: 0
