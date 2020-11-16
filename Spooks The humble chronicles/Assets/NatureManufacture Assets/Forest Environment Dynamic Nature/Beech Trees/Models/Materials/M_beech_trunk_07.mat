@@ -93,11 +93,11 @@ Material:
     - _SpecularHighlights: 1
     - _Stiffness: 0
     - _TrunkAORemapMax: 1
-    - _TrunkAORemapMin: 0
+    - _TrunkAORemapMin: 0.024
     - _TrunkMetallic: 1
     - _TrunkNormalScale: 1
     - _TrunkSmoothnessRemapMax: 1
-    - _TrunkSmoothnessRemapMin: 0
+    - _TrunkSmoothnessRemapMin: 0.031
     - _TurbulenceStrength: 1
     - _VertexNormalStrength: 1
     - _WIND_CONTROL: 1

@@ -113,7 +113,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _AORemapMax: 1
-    - _AORemapMin: 0
+    - _AORemapMin: 0.031
     - _ATDistance: 1
     - _AlbedoAffectEmissive: 0
     - _AlphaCutoff: 0.204
@@ -211,7 +211,7 @@ Material:
     - _ShiverDrag: 0
     - _Smoothness: 1
     - _SmoothnessRemapMax: 1
-    - _SmoothnessRemapMin: 0
+    - _SmoothnessRemapMin: 0.045
     - _Specular: 0.3
     - _SpecularAAScreenSpaceVariance: 0.1
     - _SpecularAAThreshold: 0.2
