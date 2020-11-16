@@ -41,6 +41,9 @@ public class RFX4_PhysicsMotion : MonoBehaviour
 
     void OnEnable ()
     {
+        //Vector3 pos = transform.position;
+        //pos.z = 0;
+        //transform.position = pos;
         effectSettings = GetComponentInParent<RFX4_EffectSettings>();
         foreach (var obj in DeactivateObjectsAfterCollision)
         {
