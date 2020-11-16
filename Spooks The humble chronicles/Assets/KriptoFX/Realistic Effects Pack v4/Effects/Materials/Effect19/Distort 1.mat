@@ -80,7 +80,7 @@ Material:
     - _AlphaDistort: 0
     - _BumpAmt: 5000
     - _BumpScale: 1
-    - _CullMode: 0
+    - _CullMode: 1
     - _Cutoff: 0.5
     - _Cutout: 1
     - _CutoutThreshold: 0.015
