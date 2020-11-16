@@ -13,7 +13,7 @@ Material:
     _NORMALMAP_TANGENT_SPACE1 _NORMALMAP_TANGENT_SPACE2 _NORMALMAP_TANGENT_SPACE3
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
   stringTagMap:
     MotionVector: User
@@ -328,11 +328,11 @@ Material:
     - _AlphaSrcBlend: 1
     - _Anisotropy: 0
     - _BarkAORemapMax: 1
-    - _BarkAORemapMin: 0
+    - _BarkAORemapMin: 0.01
     - _BarkMetallic: 1
     - _BarkNormalScale: 0.99
     - _BarkSmoothnessRemapMax: 1
-    - _BarkSmoothnessRemapMin: 0
+    - _BarkSmoothnessRemapMin: 0.027
     - _BarkUseUV3: 1
     - _BlendMode: 0
     - _CoatMask: 0
@@ -565,7 +565,7 @@ Material:
     - _TrunkAORemapMax: 1
     - _TrunkAORemapMin: 0.164
     - _TrunkMetallic: 1
-    - _TrunkNormalScale: 1
+    - _TrunkNormalScale: 0.89
     - _TrunkSmoothnessRemapMax: 1
     - _TrunkSmoothnessRemapMin: 0.055
     - _UVBase: 0
@@ -593,8 +593,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BarkBaseColor: {r: 0.9056604, g: 0.9022878, b: 0.89284444, a: 1}
-    - _BarkBlendMaskTilingOffset: {r: 1, g: 1, b: 0, a: 0}
-    - _BarkTilingOffset: {r: 1, g: 1, b: 0, a: 0}
+    - _BarkBlendMaskTilingOffset: {r: 0.86, g: 0.88, b: 0, a: 0}
+    - _BarkTilingOffset: {r: 0.94, g: 1, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor0: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColor1: {r: 1, g: 1, b: 1, a: 1}
@@ -609,7 +609,7 @@ Material:
     - _EmissiveColorLDR: {r: 0, g: 0, b: 0, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
-    - _NewNormal: {r: 0, g: 0, b: 0, a: 0}
+    - _NewNormal: {r: 0.09, g: 0.36, b: 0.27, a: 0.03}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _ThicknessRemap: {r: 0, g: 1, b: 0, a: 0}
     - _ThicknessRemap0: {r: 0, g: 1, b: 0, a: 0}

@@ -333,7 +333,7 @@ Material:
     - _BarkMetallic: 1
     - _BarkNormalScale: 1
     - _BarkSmoothnessRemapMax: 1
-    - _BarkSmoothnessRemapMin: 0
+    - _BarkSmoothnessRemapMin: 0.01
     - _BarkUseUV3: 1
     - _BlendMode: 0
     - _CoatMask: 0
@@ -564,7 +564,7 @@ Material:
     - _TransparentWritingMotionVec: 0
     - _TransparentWritingVelocity: 0
     - _TrunkAORemapMax: 1
-    - _TrunkAORemapMin: 0.024
+    - _TrunkAORemapMin: 0.021
     - _TrunkMetallic: 1
     - _TrunkNormalScale: 1
     - _TrunkSmoothnessRemapMax: 1
