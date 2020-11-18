@@ -17,6 +17,7 @@ public class LocoMotion : MonoBehaviour
     private bool _isFacingRight;
 
     private bool _isMidAnim;
+    private bool _isMidJump;
     private IDealSwordDamage _SwordDamageInterface;
     private IToggleShield _ShieldToggleInterface;
    
@@ -56,11 +57,13 @@ public class LocoMotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_movePlayer.x > 0.3f || _movePlayer.x < -0.3f)
+        if (!_isMidJump)
         {
-            if (GetControllerDirection().magnitude >= 0.1f)
+            if (_movePlayer.x > 0.3f || _movePlayer.x < -0.3f)
             {
-               
+                if (GetControllerDirection().magnitude >= 0.1f)
+                {
+
                     if (!_isRunning)
                         _animator.SetFloat("Walk", 0.5f);
                     else
@@ -72,12 +75,13 @@ public class LocoMotion : MonoBehaviour
                         Flip();
 
                     _characterController.Move(GetControllerDirection() * speed * Time.deltaTime);
-                
+
+                }
             }
-        }
-        else
-        {
-            _animator.SetFloat("Walk", 0f);
+            else
+            {
+                _animator.SetFloat("Walk", 0f);
+            }
         }
     }
 
@@ -136,6 +140,11 @@ public class LocoMotion : MonoBehaviour
     {
         _isMidAnim = !_isMidAnim;
     }
+
+    private void MidJump()
+    {
+        _isMidJump = !_isMidJump;
+    }
     private void PlayerBlock(bool blocking)
     {
         _animator.SetBool("Blocking", blocking);
@@ -172,7 +181,8 @@ public class LocoMotion : MonoBehaviour
 
     private void PlayerJump()
     {
-        throw new NotImplementedException();
+        _isMidJump = true;
+        _animator.SetTrigger("Jump");
     }
 
     private void PlayerSheaveShield()
@@ -195,10 +205,7 @@ public class LocoMotion : MonoBehaviour
         throw new NotImplementedException();
     }
 
-    private void PlayerChangeView()
-    {
-        throw new NotImplementedException();
-    }
+    
     private void SetRun(bool run)
     {
         _isRunning = run;
