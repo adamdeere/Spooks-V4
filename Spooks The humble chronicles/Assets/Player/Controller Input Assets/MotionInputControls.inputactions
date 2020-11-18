@@ -54,14 +54,6 @@
                     "interactions": ""
                 },
                 {
-                    "name": "ThirdPersonView",
-                    "type": "Button",
-                    "id": "6308bb90-2eac-47fe-b1d3-5ea8d3c80425",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "HeavySpellOne",
                     "type": "Button",
                     "id": "213b7409-1420-4400-99b0-da377763abb5",
@@ -174,17 +166,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Fireball",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0c13ed4f-101f-466f-8e5b-a12cadf25b65",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ThirdPersonView",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

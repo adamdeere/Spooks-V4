@@ -34,7 +34,7 @@ public class LocoMotion : MonoBehaviour
         _inputControls.MotionControls.Block.canceled += ctx => PlayerBlock(false);
         _inputControls.MotionControls.Run.performed += ctx => SetRun(true);
         _inputControls.MotionControls.Run.canceled += ctx => SetRun(false);
-        //_inputControls.MotionControls.ThirdPersonView.performed += ctx => PlayerChangeView();
+      
         //_inputControls.MotionControls.HeavySpellOne.performed += ctx => PlayerHeavyOne();
         //_inputControls.MotionControls.HeavySpellTwo.performed += ctx => PlayerHeavyTwo();
         //_inputControls.MotionControls.SheaveSword.performed += ctx => PlayerSheaveSword();
