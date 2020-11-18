@@ -11,8 +11,8 @@ public class LocoMotion : MonoBehaviour
     private MotionInputControls _inputControls;
     private Vector2 _movePlayer;
 
-    private CharacterController _characterController;
-    private Animator _animator;
+    [SerializeField] private CharacterController _characterController;
+    [SerializeField] private Animator _animator;
     private bool _isRunning;
     private bool _isFacingRight;
 
@@ -46,8 +46,6 @@ public class LocoMotion : MonoBehaviour
     void Start()
     {
         RFX4_PhysicsMotion.GetplayerDirection += GetFireballDirection;
-        _characterController = GetComponent<CharacterController>();
-        _animator = GetComponent<Animator>();
         _SwordDamageInterface = _swordObject.GetComponent<IDealSwordDamage>();
         _ShieldToggleInterface = _ShieldObject.GetComponent<IToggleShield>();
         _inputControls.Enable();
@@ -212,6 +210,6 @@ public class LocoMotion : MonoBehaviour
         if (_isRunning)
             speed = 6;
         else
-            speed = 3;
+            speed = 1.5f;
     }
 }

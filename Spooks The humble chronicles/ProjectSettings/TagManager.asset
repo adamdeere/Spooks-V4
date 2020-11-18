@@ -14,11 +14,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - SwordSwingDamage
+  - Player
+  - PlayerDamage
+  - Enemy
   - 
   - 
   - 

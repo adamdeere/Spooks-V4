@@ -19,6 +19,11 @@ public class MushroomScript : MonoBehaviour, ITakeSwordDamage
             _animator.SetTrigger("Hit");
         }
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        ITakeEnemyDamage hit = collision.collider.gameObject.GetComponent<ITakeEnemyDamage>();
+        hit?.TakeEnemyDamage(5);
+    }
 
-    
+
 }
