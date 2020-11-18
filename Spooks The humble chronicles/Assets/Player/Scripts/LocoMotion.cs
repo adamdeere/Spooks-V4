@@ -18,7 +18,7 @@ public class LocoMotion : MonoBehaviour
 
     private bool _isMidAnim;
     private bool _isMidJump;
-    private IDealSwordDamage _SwordDamageInterface;
+    private IToggleSword _SwordDamageInterface;
     private IToggleShield _ShieldToggleInterface;
    
     private void Awake()
@@ -46,7 +46,7 @@ public class LocoMotion : MonoBehaviour
     void Start()
     {
         RFX4_PhysicsMotion.GetplayerDirection += GetFireballDirection;
-        _SwordDamageInterface = _swordObject.GetComponent<IDealSwordDamage>();
+        _SwordDamageInterface = _swordObject.GetComponent<IToggleSword>();
         _ShieldToggleInterface = _ShieldObject.GetComponent<IToggleShield>();
         _inputControls.Enable();
         _isFacingRight = true;

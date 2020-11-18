@@ -1,4 +1,4 @@
-﻿public interface ITakeSwordDamage
+﻿public interface ITakeDamage
 {
     void TakeSwordDamage(float damage);
 }
@@ -7,11 +7,7 @@ public interface IToggleShield
 {
     void ToggleShieldCollider(bool toggle);
 }
-public interface IMagicDamage
-{
-    void TakeMagicDamage(float damage);
-}
-public interface IDealSwordDamage
+public interface IToggleSword
 {
     void ToogleSwordCollider(bool switchOn);
 }
