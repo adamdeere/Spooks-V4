@@ -1,0 +1,33 @@
+{
+    "name": "CamSwitchControls",
+    "maps": [
+        {
+            "name": "CamSwitch",
+            "id": "38044a95-2760-4e24-b6d1-8c4b12285c40",
+            "actions": [
+                {
+                    "name": "CamSwitchPress",
+                    "type": "Button",
+                    "id": "dc6d4cc9-d324-4329-bb0c-d9b476c99c6b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "2fe0cf93-6e8e-4494-a336-fa7f28934ad0",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CamSwitchPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

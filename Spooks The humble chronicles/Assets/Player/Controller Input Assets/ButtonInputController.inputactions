@@ -1,0 +1,147 @@
+{
+    "name": "ButtonInputController",
+    "maps": [
+        {
+            "name": "ButtonInput",
+            "id": "da88af49-9f53-4ec8-97bf-42b80e4a8165",
+            "actions": [
+                {
+                    "name": "SquareButton",
+                    "type": "Button",
+                    "id": "63df247c-1424-43a2-81bc-128bfe2531ca",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "CircleButton",
+                    "type": "Button",
+                    "id": "2b1dbf9c-9dc8-43e2-b08a-f5983ee1b349",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "TriangleButton",
+                    "type": "Button",
+                    "id": "31a1c28d-5269-4854-a3ba-6c264c84ff90",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "LeftDpad",
+                    "type": "Button",
+                    "id": "2e44737b-378b-42b5-99bf-13eae6b793a6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "RightDpad",
+                    "type": "Button",
+                    "id": "cca578ad-3ed6-4fb1-8cde-65a163425b5a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "DownDPad",
+                    "type": "Button",
+                    "id": "10682adb-1306-4764-89ea-ee4c615cae69",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "UpDpad",
+                    "type": "Button",
+                    "id": "5582dc47-bd94-4e3c-9eae-a46fb50f7da2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bce4a781-967e-4432-b50e-a149d48f6a75",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SquareButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6463769d-8a7d-4a1f-9999-7dd868601c12",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CircleButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "16224d72-3670-4f0a-8bdf-0eea6588d4df",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TriangleButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b5a7c536-2db5-4d4c-8e83-3753ce99e884",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftDpad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d7d0726a-b6c9-4135-bc8b-6456a9af0f84",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightDpad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dcd94d66-95f5-475b-b7e0-3235304f5633",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DownDPad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b035330e-9f4c-49ca-8470-e268e40a00cc",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UpDpad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

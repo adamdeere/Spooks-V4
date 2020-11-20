@@ -11,14 +11,18 @@ public class LocoMotion : MonoBehaviour
     private MotionInputControls _inputControls;
     private Vector2 _movePlayer;
 
-    private CharacterController _characterController;
-    private Animator _animator;
+    [SerializeField] private CharacterController _characterController;
+    [SerializeField] private Animator _animator;
     private bool _isRunning;
     private bool _isFacingRight;
 
     private bool _isMidAnim;
-    private IDealSwordDamage _SwordDamageInterface;
+    private bool _isMidJump;
+    private IToggleSword _SwordDamageInterface;
     private IToggleShield _ShieldToggleInterface;
+
+    [SerializeField] private float _ComboTime;
+    private int _ComboCount = 0;
    
     private void Awake()
     {
@@ -34,7 +38,7 @@ public class LocoMotion : MonoBehaviour
         _inputControls.MotionControls.Block.canceled += ctx => PlayerBlock(false);
         _inputControls.MotionControls.Run.performed += ctx => SetRun(true);
         _inputControls.MotionControls.Run.canceled += ctx => SetRun(false);
-        //_inputControls.MotionControls.ThirdPersonView.performed += ctx => PlayerChangeView();
+      
         //_inputControls.MotionControls.HeavySpellOne.performed += ctx => PlayerHeavyOne();
         //_inputControls.MotionControls.HeavySpellTwo.performed += ctx => PlayerHeavyTwo();
         //_inputControls.MotionControls.SheaveSword.performed += ctx => PlayerSheaveSword();
@@ -45,9 +49,7 @@ public class LocoMotion : MonoBehaviour
     void Start()
     {
         RFX4_PhysicsMotion.GetplayerDirection += GetFireballDirection;
-        _characterController = GetComponent<CharacterController>();
-        _animator = GetComponent<Animator>();
-        _SwordDamageInterface = _swordObject.GetComponent<IDealSwordDamage>();
+        _SwordDamageInterface = _swordObject.GetComponent<IToggleSword>();
         _ShieldToggleInterface = _ShieldObject.GetComponent<IToggleShield>();
         _inputControls.Enable();
         _isFacingRight = true;
@@ -56,11 +58,13 @@ public class LocoMotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_movePlayer.x > 0.3f || _movePlayer.x < -0.3f)
+        if (!_isMidJump)
         {
-            if (GetControllerDirection().magnitude >= 0.1f)
+            if (_movePlayer.x > 0.3f || _movePlayer.x < -0.3f)
             {
-               
+                if (GetControllerDirection().magnitude >= 0.1f)
+                {
+
                     if (!_isRunning)
                         _animator.SetFloat("Walk", 0.5f);
                     else
@@ -72,13 +76,15 @@ public class LocoMotion : MonoBehaviour
                         Flip();
 
                     _characterController.Move(GetControllerDirection() * speed * Time.deltaTime);
-                
+
+                }
+            }
+            else
+            {
+                _animator.SetFloat("Walk", 0f);
             }
         }
-        else
-        {
-            _animator.SetFloat("Walk", 0f);
-        }
+       
     }
 
     private void OnDisable()
@@ -130,11 +136,16 @@ public class LocoMotion : MonoBehaviour
         rot.y *= -1;
         transform.rotation = rot;
         //will have to sort this out anopther day
-       // _animator.SetTrigger("RotatePlayer");
+        //_animator.SetTrigger("RotatePlayer");
     }
     private void MidAnimation()
     {
         _isMidAnim = !_isMidAnim;
+    }
+
+    private void MidJump()
+    {
+        _isMidJump = !_isMidJump;
     }
     private void PlayerBlock(bool blocking)
     {
@@ -172,7 +183,9 @@ public class LocoMotion : MonoBehaviour
 
     private void PlayerJump()
     {
-        throw new NotImplementedException();
+        _isMidJump = true;
+        _animator.SetTrigger("Jump");
+        _animator.SetBool("Running", _isRunning);
     }
 
     private void PlayerSheaveShield()
@@ -195,16 +208,13 @@ public class LocoMotion : MonoBehaviour
         throw new NotImplementedException();
     }
 
-    private void PlayerChangeView()
-    {
-        throw new NotImplementedException();
-    }
+    
     private void SetRun(bool run)
     {
         _isRunning = run;
         if (_isRunning)
             speed = 6;
         else
-            speed = 3;
+            speed = 1.5f;
     }
 }

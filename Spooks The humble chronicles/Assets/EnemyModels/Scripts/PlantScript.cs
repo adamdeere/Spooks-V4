@@ -1,13 +1,8 @@
 ﻿using UnityEngine;
 
-public class PlantScript : MonoBehaviour, ITakeSwordDamage, IMagicDamage
+public class PlantScript : MonoBehaviour, ITakeDamage
 {
-    [SerializeField] private Animator _PlantAnimator;
-    
-    public void TakeMagicDamage(float damage)
-    {
-        throw new System.NotImplementedException();
-    }
+    [SerializeField] private Animator _PlantAnimator; 
 
     public void TakeSwordDamage(float damage)
     {

@@ -67,14 +67,6 @@ public class @MotionInputControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""ThirdPersonView"",
-                    ""type"": ""Button"",
-                    ""id"": ""6308bb90-2eac-47fe-b1d3-5ea8d3c80425"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""HeavySpellOne"",
                     ""type"": ""Button"",
                     ""id"": ""213b7409-1420-4400-99b0-da377763abb5"",
@@ -192,17 +184,6 @@ public class @MotionInputControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""0c13ed4f-101f-466f-8e5b-a12cadf25b65"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""ThirdPersonView"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""09d7b189-5e05-4f9d-83ed-b28570e6b14b"",
                     ""path"": ""<Gamepad>/leftShoulder"",
                     ""interactions"": """",
@@ -280,7 +261,6 @@ public class @MotionInputControls : IInputActionCollection, IDisposable
         m_MotionControls_LightSwing = m_MotionControls.FindAction("LightSwing", throwIfNotFound: true);
         m_MotionControls_HeavySwing = m_MotionControls.FindAction("HeavySwing", throwIfNotFound: true);
         m_MotionControls_Fireball = m_MotionControls.FindAction("Fireball", throwIfNotFound: true);
-        m_MotionControls_ThirdPersonView = m_MotionControls.FindAction("ThirdPersonView", throwIfNotFound: true);
         m_MotionControls_HeavySpellOne = m_MotionControls.FindAction("HeavySpellOne", throwIfNotFound: true);
         m_MotionControls_HeavySpellTwo = m_MotionControls.FindAction("HeavySpellTwo", throwIfNotFound: true);
         m_MotionControls_SheaveSword = m_MotionControls.FindAction("SheaveSword", throwIfNotFound: true);
@@ -342,7 +322,6 @@ public class @MotionInputControls : IInputActionCollection, IDisposable
     private readonly InputAction m_MotionControls_LightSwing;
     private readonly InputAction m_MotionControls_HeavySwing;
     private readonly InputAction m_MotionControls_Fireball;
-    private readonly InputAction m_MotionControls_ThirdPersonView;
     private readonly InputAction m_MotionControls_HeavySpellOne;
     private readonly InputAction m_MotionControls_HeavySpellTwo;
     private readonly InputAction m_MotionControls_SheaveSword;
@@ -359,7 +338,6 @@ public class @MotionInputControls : IInputActionCollection, IDisposable
         public InputAction @LightSwing => m_Wrapper.m_MotionControls_LightSwing;
         public InputAction @HeavySwing => m_Wrapper.m_MotionControls_HeavySwing;
         public InputAction @Fireball => m_Wrapper.m_MotionControls_Fireball;
-        public InputAction @ThirdPersonView => m_Wrapper.m_MotionControls_ThirdPersonView;
         public InputAction @HeavySpellOne => m_Wrapper.m_MotionControls_HeavySpellOne;
         public InputAction @HeavySpellTwo => m_Wrapper.m_MotionControls_HeavySpellTwo;
         public InputAction @SheaveSword => m_Wrapper.m_MotionControls_SheaveSword;
@@ -393,9 +371,6 @@ public class @MotionInputControls : IInputActionCollection, IDisposable
                 @Fireball.started -= m_Wrapper.m_MotionControlsActionsCallbackInterface.OnFireball;
                 @Fireball.performed -= m_Wrapper.m_MotionControlsActionsCallbackInterface.OnFireball;
                 @Fireball.canceled -= m_Wrapper.m_MotionControlsActionsCallbackInterface.OnFireball;
-                @ThirdPersonView.started -= m_Wrapper.m_MotionControlsActionsCallbackInterface.OnThirdPersonView;
-                @ThirdPersonView.performed -= m_Wrapper.m_MotionControlsActionsCallbackInterface.OnThirdPersonView;
-                @ThirdPersonView.canceled -= m_Wrapper.m_MotionControlsActionsCallbackInterface.OnThirdPersonView;
                 @HeavySpellOne.started -= m_Wrapper.m_MotionControlsActionsCallbackInterface.OnHeavySpellOne;
                 @HeavySpellOne.performed -= m_Wrapper.m_MotionControlsActionsCallbackInterface.OnHeavySpellOne;
                 @HeavySpellOne.canceled -= m_Wrapper.m_MotionControlsActionsCallbackInterface.OnHeavySpellOne;
@@ -436,9 +411,6 @@ public class @MotionInputControls : IInputActionCollection, IDisposable
                 @Fireball.started += instance.OnFireball;
                 @Fireball.performed += instance.OnFireball;
                 @Fireball.canceled += instance.OnFireball;
-                @ThirdPersonView.started += instance.OnThirdPersonView;
-                @ThirdPersonView.performed += instance.OnThirdPersonView;
-                @ThirdPersonView.canceled += instance.OnThirdPersonView;
                 @HeavySpellOne.started += instance.OnHeavySpellOne;
                 @HeavySpellOne.performed += instance.OnHeavySpellOne;
                 @HeavySpellOne.canceled += instance.OnHeavySpellOne;
@@ -469,7 +441,6 @@ public class @MotionInputControls : IInputActionCollection, IDisposable
         void OnLightSwing(InputAction.CallbackContext context);
         void OnHeavySwing(InputAction.CallbackContext context);
         void OnFireball(InputAction.CallbackContext context);
-        void OnThirdPersonView(InputAction.CallbackContext context);
         void OnHeavySpellOne(InputAction.CallbackContext context);
         void OnHeavySpellTwo(InputAction.CallbackContext context);
         void OnSheaveSword(InputAction.CallbackContext context);

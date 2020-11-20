@@ -132,7 +132,7 @@ public class RFX4_PhysicsMotion : MonoBehaviour
 
         if (rigid != null) Destroy(rigid);
         if (collid != null) Destroy(collid);
-        collision.collider.gameObject.GetComponent<ITakeSwordDamage>()?.TakeSwordDamage(30);
+        collision.collider.gameObject.GetComponent<ITakeDamage>()?.TakeSwordDamage(30);
         Destroy(gameObject);
     }
 
