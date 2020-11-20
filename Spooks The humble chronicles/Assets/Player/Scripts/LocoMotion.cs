@@ -1,56 +1,38 @@
-﻿using System;
+﻿using System.Collections;
 using UnityEngine;
 
 public class LocoMotion : MonoBehaviour
 {
     [SerializeField] private float speed = 3f;
-    [SerializeField] private string[] _swordSwingAnim;
-    [SerializeField] private string[] _magicSpellAnim;
-    [SerializeField] private GameObject _swordObject;
-    [SerializeField] private GameObject _ShieldObject;
+    
     private MotionInputControls _inputControls;
     private Vector2 _movePlayer;
 
     [SerializeField] private CharacterController _characterController;
     [SerializeField] private Animator _animator;
+ 
     private bool _isRunning;
     private bool _isFacingRight;
 
     private bool _isMidAnim;
     private bool _isMidJump;
-    private IToggleSword _SwordDamageInterface;
-    private IToggleShield _ShieldToggleInterface;
 
     [SerializeField] private float _ComboTime;
-    private int _ComboCount = 0;
+  
    
     private void Awake()
     {
         _inputControls = new MotionInputControls();
-
         _inputControls.MotionControls.Move.performed += ctx => _movePlayer = ctx.ReadValue<Vector2>();
         _inputControls.MotionControls.Move.canceled += ctx => _movePlayer = Vector2.zero;
         _inputControls.MotionControls.Jump.performed += ctx => PlayerJump();
-        _inputControls.MotionControls.LightSwing.performed += ctx => PlayerLightSwing();
-        _inputControls.MotionControls.HeavySwing.performed += ctx => PlayerHeavySwing();
-        _inputControls.MotionControls.Fireball.performed += ctx => PlayerFireball();
-        _inputControls.MotionControls.Block.performed += ctx => PlayerBlock(true);
-        _inputControls.MotionControls.Block.canceled += ctx => PlayerBlock(false);
-        _inputControls.MotionControls.Run.performed += ctx => SetRun(true);
-        _inputControls.MotionControls.Run.canceled += ctx => SetRun(false);
-      
-        //_inputControls.MotionControls.HeavySpellOne.performed += ctx => PlayerHeavyOne();
-        //_inputControls.MotionControls.HeavySpellTwo.performed += ctx => PlayerHeavyTwo();
-        //_inputControls.MotionControls.SheaveSword.performed += ctx => PlayerSheaveSword();
-        //_inputControls.MotionControls.SheaveShield.performed += ctx => PlayerSheaveShield();
+        RFX4_PhysicsMotion.GetplayerDirection += GetFireballDirection;
+       
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        RFX4_PhysicsMotion.GetplayerDirection += GetFireballDirection;
-        _SwordDamageInterface = _swordObject.GetComponent<IToggleSword>();
-        _ShieldToggleInterface = _ShieldObject.GetComponent<IToggleShield>();
         _inputControls.Enable();
         _isFacingRight = true;
     }
@@ -84,7 +66,6 @@ public class LocoMotion : MonoBehaviour
                 _animator.SetFloat("Walk", 0f);
             }
         }
-       
     }
 
     private void OnDisable()
@@ -97,19 +78,9 @@ public class LocoMotion : MonoBehaviour
         _inputControls.MotionControls.Move.performed -= ctx => _movePlayer = ctx.ReadValue<Vector2>();
         _inputControls.MotionControls.Move.canceled -= ctx => _movePlayer = Vector2.zero;
         _inputControls.MotionControls.Jump.performed -= ctx => PlayerJump();
-        _inputControls.MotionControls.LightSwing.performed -= ctx => PlayerLightSwing();
-        _inputControls.MotionControls.HeavySwing.performed -= ctx => PlayerHeavySwing();
-        _inputControls.MotionControls.Fireball.performed -= ctx => PlayerFireball();
-        _inputControls.MotionControls.Block.performed -= ctx => PlayerBlock(true);
-        _inputControls.MotionControls.Block.canceled -= ctx => PlayerBlock(false);
-        _inputControls.MotionControls.Run.performed += ctx => SetRun(true);
-        _inputControls.MotionControls.Run.canceled += ctx => SetRun(false);
-        //_inputControls.MotionControls.ThirdPersonView.performed -= ctx => PlayerChangeView();
-        //_inputControls.MotionControls.HeavySpellOne.performed -= ctx => PlayerHeavyOne();
-        //_inputControls.MotionControls.HeavySpellTwo.performed -= ctx => PlayerHeavyTwo();
-        //_inputControls.MotionControls.SheaveSword.performed -= ctx => PlayerSheaveSword();
-        //_inputControls.MotionControls.SheaveShield.performed -= ctx => PlayerSheaveShield();
-        RFX4_PhysicsMotion.GetplayerDirection += GetFireballDirection;
+        _inputControls.MotionControls.Run.performed -= ctx => SetRun(true);
+        _inputControls.MotionControls.Run.canceled -= ctx => SetRun(false);
+        RFX4_PhysicsMotion.GetplayerDirection -= GetFireballDirection;
     }
 
     private Vector3 GetControllerDirection()
@@ -138,76 +109,21 @@ public class LocoMotion : MonoBehaviour
         //will have to sort this out anopther day
         //_animator.SetTrigger("RotatePlayer");
     }
-    private void MidAnimation()
-    {
-        _isMidAnim = !_isMidAnim;
-    }
+   
 
     private void MidJump()
     {
         _isMidJump = !_isMidJump;
     }
-    private void PlayerBlock(bool blocking)
-    {
-        _animator.SetBool("Blocking", blocking);
-        _ShieldToggleInterface?.ToggleShieldCollider(blocking);
-    }
-
-    private void PlayerFireball()
-    {
-        _animator.SetTrigger(_magicSpellAnim[0]);
-    }
-
-    private void PlayerHeavySwing()
-    {
-        _animator.SetTrigger(_magicSpellAnim[1]);
-    }
-    private void EndSwing()
-    {
-        _isMidAnim = false;
-        _SwordDamageInterface?.ToogleSwordCollider(false);
-    }
-    private void PlayerLightSwing()
-    {
-        if (!_isMidAnim)
-        {
-            _SwordDamageInterface?.ToogleSwordCollider(true);
-            _animator.SetTrigger(_swordSwingAnim[0]);
-        }
-        else
-        {
-           //this is where the combo system will take us
-        }
-      
-    }
+   
 
     private void PlayerJump()
     {
-        _isMidJump = true;
         _animator.SetTrigger("Jump");
-        _animator.SetBool("Running", _isRunning);
+        StartCoroutine(StartJump());
+       // _animator.SetBool("Running", _isRunning);
+        
     }
-
-    private void PlayerSheaveShield()
-    {
-        throw new NotImplementedException();
-    }
-
-    private void PlayerSheaveSword()
-    {
-        throw new NotImplementedException();
-    }
-
-    private void PlayerHeavyTwo()
-    {
-        throw new NotImplementedException();
-    }
-
-    private void PlayerHeavyOne()
-    {
-        throw new NotImplementedException();
-    }
-
     
     private void SetRun(bool run)
     {
@@ -216,5 +132,16 @@ public class LocoMotion : MonoBehaviour
             speed = 6;
         else
             speed = 1.5f;
+    }
+
+    private IEnumerator StartJump()
+    {
+        //MidJump();
+        //while (_jumpAnim.isPlaying)
+        //{
+        //    yield return null;
+        //}
+        //MidJump();
+        yield return 0;
     }
 }
