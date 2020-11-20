@@ -3,6 +3,7 @@
 public class SwordAttack : MonoBehaviour, IToggleSword
 {
     [SerializeField] private float damagePower = 10f;
+    [SerializeField] private Animator _PlayerAnimator;
     private void Start()
     {
         gameObject.SetActive(false);

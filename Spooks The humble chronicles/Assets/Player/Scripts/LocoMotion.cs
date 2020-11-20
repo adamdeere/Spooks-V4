@@ -20,6 +20,9 @@ public class LocoMotion : MonoBehaviour
     private bool _isMidJump;
     private IToggleSword _SwordDamageInterface;
     private IToggleShield _ShieldToggleInterface;
+
+    [SerializeField] private float _ComboTime;
+    private int _ComboCount = 0;
    
     private void Awake()
     {
@@ -81,6 +84,7 @@ public class LocoMotion : MonoBehaviour
                 _animator.SetFloat("Walk", 0f);
             }
         }
+       
     }
 
     private void OnDisable()
@@ -132,7 +136,7 @@ public class LocoMotion : MonoBehaviour
         rot.y *= -1;
         transform.rotation = rot;
         //will have to sort this out anopther day
-       // _animator.SetTrigger("RotatePlayer");
+        //_animator.SetTrigger("RotatePlayer");
     }
     private void MidAnimation()
     {
@@ -181,6 +185,7 @@ public class LocoMotion : MonoBehaviour
     {
         _isMidJump = true;
         _animator.SetTrigger("Jump");
+        _animator.SetBool("Running", _isRunning);
     }
 
     private void PlayerSheaveShield()

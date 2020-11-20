@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 4be2224a5ddca074bb93b055b5c5812c
 ModelImporter:
-  serializedVersion: 19301
+  serializedVersion: 20101
   internalIDToNameTable:
   - first:
       1: 100000
@@ -1391,7 +1391,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Dagger
-    second: {fileID: 2100000, guid: fff81bc7d800c54429a4020edb755627, type: 2}
+    second: {fileID: 2100000, guid: cc3176327c9f53b47b484ba329d43655, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -1421,12 +1421,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Mat
-    second: {fileID: 2100000, guid: 3ccaa25480a9986418245c552f5c9805, type: 2}
+    second: {fileID: 2100000, guid: d4ff1eb2363ab1a4ea8a4043058d9909, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: sword009_set
-    second: {fileID: 2100000, guid: 6a537ec12c531d843a23f99a6872c08f, type: 2}
+    second: {fileID: 2100000, guid: 55b6bf972677a2c4c8cd2dbe457fca33, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -1441,66 +1441,7 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'Base HumanLThigh2' is inbetween humanoid
-      transforms and has rotation animation that will be discarded.\n\t'Base HumanLCalf'
-      has scale animation that will be discarded.\n\t'Base HumanLFoot' has scale
-      animation that will be discarded.\n\t'Base HumanLToe11' has scale animation
-      that will be discarded.\n\t'Base HumanRThigh1' has scale animation that will
-      be discarded.\n\t'Base HumanRThigh2' is inbetween humanoid transforms and has
-      rotation animation that will be discarded.\n\t'Base HumanRCalf' has scale animation
-      that will be discarded.\n\t'Base HumanRFoot' has scale animation that will
-      be discarded.\n\t'Base HumanRToe11' has scale animation that will be discarded.\n\t'Base
-      HumanRibcage' is inbetween humanoid transforms and has rotation animation that
-      will be discarded.\n\t'Base HumanLCollarbone' has translation animation that
-      will be discarded.\n\t'Base HumanLUpperarm1' has scale animation that will
-      be discarded.\n\t'Base HumanLUpperarm2' is inbetween humanoid transforms and
-      has rotation animation that will be discarded.\n\t'Base HumanLForearm1' has
-      scale animation that will be discarded.\n\t'Base HumanLForearm2' is inbetween
-      humanoid transforms and has rotation animation that will be discarded.\n\t'Base
-      HumanLForearm3' is inbetween humanoid transforms and has rotation animation
-      that will be discarded.\n\t'Base HumanLPalm' has scale animation that will
-      be discarded.\n\t'Base HumanLThumbL1' has scale animation that will be discarded.\n\t'Base
-      HumanLThumbL2' has scale animation that will be discarded.\n\t'Base HumanLThumbL3'
-      has scale animation that will be discarded.\n\t'Base HumanLFingerL1' has scale
-      animation that will be discarded.\n\t'Base HumanLFingerL2' has scale animation
-      that will be discarded.\n\t'Base HumanLFingerL3' has scale animation that will
-      be discarded.\n\t'Base HumanLFingerIndexL1' has scale animation that will be
-      discarded.\n\t'Base HumanLFingerIndexL2' has scale animation that will be discarded.\n\t'Base
-      HumanLFingerIndexL3' has scale animation that will be discarded.\n\t'Base HumanLFingerRingL1'
-      has scale animation that will be discarded.\n\t'Base HumanLFingerRingL2' has
-      scale animation that will be discarded.\n\t'Base HumanLFingerRingL3' has scale
-      animation that will be discarded.\n\t'Base HumanLFingerPinkieL1' has scale
-      animation that will be discarded.\n\t'Base HumanLFingerPinkieL2' has scale
-      animation that will be discarded.\n\t'Base HumanLFingerPinkieL3' has scale
-      animation that will be discarded.\n\t'Base HumanRCollarbone' has translation
-      animation that will be discarded.\n\t'Base HumanRUpperarm1' has scale animation
-      that will be discarded.\n\t'Base HumanRUpperarm2' is inbetween humanoid transforms
-      and has rotation animation that will be discarded.\n\t'Base HumanRForearm1'
-      has scale animation that will be discarded.\n\t'Base HumanRForearm2' is inbetween
-      humanoid transforms and has rotation animation that will be discarded.\n\t'Base
-      HumanRForearm3' is inbetween humanoid transforms and has rotation animation
-      that will be discarded.\n\t'Base HumanRPalm' has scale animation that will
-      be discarded.\n\t'Base HumanRThumbR1' has scale animation that will be discarded.\n\t'Base
-      HumanRThumbR2' has scale animation that will be discarded.\n\t'Base HumanRThumbR3'
-      has scale animation that will be discarded.\n\t'Base HumanRFingerR1' has scale
-      animation that will be discarded.\n\t'Base HumanRFingerR2' has scale animation
-      that will be discarded.\n\t'Base HumanRFingerR3' has scale animation that will
-      be discarded.\n\t'Base HumanRFingerIndexR1' has scale animation that will be
-      discarded.\n\t'Base HumanRFingerIndexR2' has scale animation that will be discarded.\n\t'Base
-      HumanRFingerIndexR3' has scale animation that will be discarded.\n\t'Base HumanRFingerRingR1'
-      has scale animation that will be discarded.\n\t'Base HumanRFingerRingR2' has
-      scale animation that will be discarded.\n\t'Base HumanRFingerRingR3' has scale
-      animation that will be discarded.\n\t'Base HumanRFingerPinkieR1' has scale
-      animation that will be discarded.\n\t'Base HumanRFingerPinkieR2' has scale
-      animation that will be discarded.\n\t'Base HumanRFingerPinkieR3' has scale
-      animation that will be discarded.\n\t'Base HumanNeck' has scale animation that
-      will be discarded.\n\t'Base HumanHead' has scale animation that will be discarded.\n\t'EyePointR'
-      is inbetween humanoid transforms and has rotation animation that will be discarded.\n\t'EyeR'
-      has translation animation that will be discarded.\n\t'EyePointL' is inbetween
-      humanoid transforms and has rotation animation that will be discarded.\n\t'EyeL'
-      has translation animation that will be discarded.\n"
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -23286,6 +23227,7 @@ ModelImporter:
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4
@@ -23295,6 +23237,9 @@ ModelImporter:
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
