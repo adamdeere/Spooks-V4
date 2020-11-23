@@ -120,7 +120,7 @@ public class LocoMotion : MonoBehaviour
     private void PlayerJump()
     {
         _animator.SetTrigger("Jump");
-        StartCoroutine(StartJump());
+      
        // _animator.SetBool("Running", _isRunning);
         
     }
@@ -134,14 +134,14 @@ public class LocoMotion : MonoBehaviour
             speed = 1.5f;
     }
 
-    private IEnumerator StartJump()
-    {
-        //MidJump();
-        //while (_jumpAnim.isPlaying)
-        //{
-        //    yield return null;
-        //}
-        //MidJump();
-        yield return 0;
-    }
+    //private IEnumerator StartJump()
+    //{
+    //    //MidJump();
+    //    //while (_jumpAnim.isPlaying)
+    //    //{
+    //    //    yield return null;
+    //    //}
+    //    //MidJump();
+    //    yield return 0;
+    //}
 }

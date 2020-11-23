@@ -79,7 +79,7 @@ public class @ButtonInputController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""bce4a781-967e-4432-b50e-a149d48f6a75"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -90,7 +90,7 @@ public class @ButtonInputController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""6463769d-8a7d-4a1f-9999-7dd868601c12"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -101,7 +101,7 @@ public class @ButtonInputController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""16224d72-3670-4f0a-8bdf-0eea6588d4df"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/buttonNorth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -112,7 +112,7 @@ public class @ButtonInputController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b5a7c536-2db5-4d4c-8e83-3753ce99e884"",
-                    ""path"": """",
+                    ""path"": ""<Gamepad>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
