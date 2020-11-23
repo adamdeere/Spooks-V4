@@ -15,6 +15,7 @@ public class HumanAttackScript : MonoBehaviour
     private float _DeltaTime;
     private Queue<string> _animTagQueue;
     private LocoMotion _movementScript;
+    private bool _isHeavyattack;
     private void Awake()
     {
          _movementScript = GetComponentInParent<LocoMotion>();
@@ -83,29 +84,30 @@ public class HumanAttackScript : MonoBehaviour
     }
     private void ResetComboMachine()
     {
-        _movementScript.OnMidAnimation(false);
         _DeltaTime = 0;
         _buttonPressCount = 0;
     }
+    private void HeavyattackMovement()
+    {
+        _isHeavyattack = !_isHeavyattack;
+        _movementScript.OnMidAnimation(_isHeavyattack);
+    }
+    private void FinishedJumping()
+    {
+        _movementScript.MidJump(false);
+    }
     private void OnAttackStarted()
     {
-        if (_buttonPressCount >= 2)
-            _movementScript.OnMidAnimation(true);
-
         _SwordObject.SetActive(true);
     }
     private void OnNextAnimation()
     {
         _SwordObject.SetActive(false);
-        _movementScript.OnMidAnimation(false);
         if (_animTagQueue.Count == 0)
-        {
             _attackAnimator.SetTrigger("ResetCombo");
-        }
         else
-        {
             _attackAnimator.SetTrigger(_animTagQueue.Dequeue());
-        }
+        
        
     }
     private IEnumerator StartComboTimer(string animName)

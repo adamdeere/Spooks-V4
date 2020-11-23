@@ -1194,7 +1194,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagePower: 10
-  _PlayerAnimator: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1679,7 +1678,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 2282927196835213655}
+  m_Follow: {fileID: 1863903410}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5

@@ -110,9 +110,9 @@ public class LocoMotion : MonoBehaviour
     }
    
 
-    private void MidJump()
+    public void MidJump(bool jump)
     {
-        _isMidJump = !_isMidJump;
+        _isMidJump = jump;
     }
    
     public void OnMidAnimation(bool anim)
@@ -121,6 +121,7 @@ public class LocoMotion : MonoBehaviour
     }
     private void PlayerJump()
     {
+        _isMidJump = true;
         _animator.SetTrigger("Jump");
     }
     
