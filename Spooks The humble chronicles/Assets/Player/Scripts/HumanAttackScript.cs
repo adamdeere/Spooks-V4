@@ -14,15 +14,16 @@ public class HumanAttackScript : MonoBehaviour
    
     private float _DeltaTime;
     private Queue<string> _animTagQueue;
+    private LocoMotion _movementScript;
     private void Awake()
     {
+         _movementScript = GetComponentInParent<LocoMotion>();
         _PlayerButtonInput = new ButtonInputController();
         _animTagQueue = new Queue<string>();
     }
 
     private void OnEnable()
     {
-        ComboCheckScript.OnCheckAnim += OnNextAnimation;
         _PlayerButtonInput.ButtonInput.SquareButton.performed += ctx => SwordAttack();
         _PlayerButtonInput.ButtonInput.TriangleButton.performed += ctx => HeavySpellAttack();
         _PlayerButtonInput.ButtonInput.CircleButton.performed += ctx => SpellAttack();
@@ -30,7 +31,6 @@ public class HumanAttackScript : MonoBehaviour
     }
     private void OnDisable()
     {
-        ComboCheckScript.OnCheckAnim -= OnNextAnimation;
         _PlayerButtonInput.ButtonInput.SquareButton.performed -= ctx => SwordAttack();
         _PlayerButtonInput.ButtonInput.TriangleButton.performed -= ctx => HeavySpellAttack();
         _PlayerButtonInput.ButtonInput.CircleButton.performed -= ctx => SpellAttack();
@@ -67,12 +67,13 @@ public class HumanAttackScript : MonoBehaviour
 
     private void SpellAttack()
     {
-        throw new NotImplementedException();
+        if (_buttonPressCount == 0)
+            _attackAnimator.SetTrigger("FireBallSpell");
     }
 
     private void HeavySpellAttack()
     {
-        if (_buttonPressCount == 2)
+        if (_buttonPressCount >= 2)
         {
             if (_ComboTime >= _DeltaTime)
             {
@@ -82,12 +83,21 @@ public class HumanAttackScript : MonoBehaviour
     }
     private void ResetComboMachine()
     {
+        _movementScript.OnMidAnimation(false);
         _DeltaTime = 0;
         _buttonPressCount = 0;
     }
+    private void OnAttackStarted()
+    {
+        if (_buttonPressCount >= 2)
+            _movementScript.OnMidAnimation(true);
 
+        _SwordObject.SetActive(true);
+    }
     private void OnNextAnimation()
     {
+        _SwordObject.SetActive(false);
+        _movementScript.OnMidAnimation(false);
         if (_animTagQueue.Count == 0)
         {
             _attackAnimator.SetTrigger("ResetCombo");
@@ -106,7 +116,6 @@ public class HumanAttackScript : MonoBehaviour
             _DeltaTime += Time.deltaTime;
             yield return 0;
         }
-        _SwordObject.SetActive(false);
         yield return 0;
         ResetComboMachine();
     }

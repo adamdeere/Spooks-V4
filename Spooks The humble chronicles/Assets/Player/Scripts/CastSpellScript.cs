@@ -14,11 +14,19 @@ public class CastSpellScript : MonoBehaviour
 
     public void StartHeavySpell()
     {
-        Debug.Log("Started heavy spell");
+       
     }
 
     public void ShootSpell()
     {
         Instantiate(_FireballPrefab, _ShootPosition.position, _ShootPosition.rotation);
+    }
+    public void ActivateAddtionalEffect()
+    {
+        Debug.Log("Started heavy spell");
+    }
+    public void ActivateEffect()
+    {
+        Debug.Log("Started heavy spell");
     }
 }

@@ -1815,6 +1815,7 @@ GameObject:
   - component: {fileID: 1863903410}
   - component: {fileID: 1863903411}
   - component: {fileID: 1863903412}
+  - component: {fileID: 1863903413}
   m_Layer: 10
   m_Name: HumanMale
   m_TagString: Untagged
@@ -1849,32 +1850,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d24040a828b84d4594af4ed8ff7e1fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _attackAnimator: {fileID: 2282927196842893187}
+  _attackAnimator: {fileID: 1863903413}
   _SwordObject: {fileID: 827091048}
   _ComboTime: 1
   _AttackNames:
+  - SwordAttackOne
   - SwordAttackTwo
   - SwordAttackThree
   - ClearScreenSpell
---- !u!111 &1863903412
-Animation:
+--- !u!114 &1863903412
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1863903409}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c613b4dc5d9b9a240950d767482bc295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _HandPositionTransform: {fileID: 3281639369683622715}
+  _ShootPosition: {fileID: 4468948338392365581}
+  _HandEffectPrefab: {fileID: 1935630441017222, guid: fe071888711a2464e8505b5a3d8f9183,
+    type: 3}
+  _FireballPrefab: {fileID: 1748139164946814, guid: 4f14e37b24a0f9c41a81220f59ae87f6,
+    type: 3}
+--- !u!95 &1863903413
+Animator:
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: e38a144265969424ba62166b87f5b9ba, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: e38a144265969424ba62166b87f5b9ba, type: 2}
-  - {fileID: 7400000, guid: 64846c9ae60d77349ab20d15e7f89c59, type: 2}
-  - {fileID: 7400000, guid: 3b802e4671aea8c479dbca9a85675bc4, type: 2}
-  - {fileID: 7400000, guid: 7bcd73e360a669b489a10111919e3847, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863903409}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 04a905f024e5dc54087fe538dbe25688, type: 3}
+  m_Controller: {fileID: 9100000, guid: 25fb34381777f5f4588a87eb1ad4083d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 1
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1941881030
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5475,10 +5495,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2282927196835213655}
-  - component: {fileID: 2282927196842893187}
   - component: {fileID: 2282927196835638584}
   - component: {fileID: 2282927196835638585}
-  - component: {fileID: 2282927196835638587}
   m_Layer: 10
   m_Name: MainPlayer
   m_TagString: Untagged
@@ -5518,26 +5536,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   _characterController: {fileID: 2282927196835638584}
-  _animator: {fileID: 2282927196842893187}
+  _animator: {fileID: 1863903413}
   _ComboTime: 0
---- !u!114 &2282927196835638587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2282927196835638583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c613b4dc5d9b9a240950d767482bc295, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _HandPositionTransform: {fileID: 3281639369683622715}
-  _ShootPosition: {fileID: 4468948338392365581}
-  _HandEffectPrefab: {fileID: 1935630441017222, guid: fe071888711a2464e8505b5a3d8f9183,
-    type: 3}
-  _FireballPrefab: {fileID: 1748139164946814, guid: 4f14e37b24a0f9c41a81220f59ae87f6,
-    type: 3}
 --- !u!1 &2282927196835638593
 GameObject:
   m_ObjectHideFlags: 0
@@ -7490,25 +7490,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.00024351478, y: -0.016085386, z: -0.116627455}
     m_Extent: {x: 0.93295205, y: 0.31747162, z: 0.9810616}
   m_DirtyAABB: 0
---- !u!95 &2282927196842893187
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2282927196835638583}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 04a905f024e5dc54087fe538dbe25688, type: 3}
-  m_Controller: {fileID: 9100000, guid: 25fb34381777f5f4588a87eb1ad4083d, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!137 &2354455635786512793
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0

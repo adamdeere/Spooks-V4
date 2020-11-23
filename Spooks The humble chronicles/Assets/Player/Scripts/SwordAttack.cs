@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-public class SwordAttack : MonoBehaviour, IToggleSword
+public class SwordAttack : MonoBehaviour
 {
     [SerializeField] private float damagePower = 10f;
-    [SerializeField] private Animator _PlayerAnimator;
+
     private void Start()
     {
         gameObject.SetActive(false);
@@ -16,10 +16,5 @@ public class SwordAttack : MonoBehaviour, IToggleSword
     {
         var hit = collision.collider.gameObject.GetComponent<ITakeDamage>();
         hit?.TakeSwordDamage(damagePower);
-    }
-
-    public void ToogleSwordCollider(bool switchOn)
-    {
-        gameObject.SetActive(switchOn);
     }
 }

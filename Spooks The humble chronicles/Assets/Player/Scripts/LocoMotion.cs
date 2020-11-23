@@ -40,7 +40,7 @@ public class LocoMotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!_isMidJump)
+        if (!_isMidJump && !_isMidAnim)
         {
             if (_movePlayer.x > 0.3f || _movePlayer.x < -0.3f)
             {
@@ -56,9 +56,8 @@ public class LocoMotion : MonoBehaviour
                         Flip();
                     else if (_movePlayer.x > 0 && !_isFacingRight)
                         Flip();
-
-                    _characterController.Move(GetControllerDirection() * speed * Time.deltaTime);
-
+                
+                      _characterController.Move(GetControllerDirection() * speed * Time.deltaTime);
                 }
             }
             else
@@ -116,13 +115,13 @@ public class LocoMotion : MonoBehaviour
         _isMidJump = !_isMidJump;
     }
    
-
+    public void OnMidAnimation(bool anim)
+    {
+        _isMidAnim = anim;
+    }
     private void PlayerJump()
     {
         _animator.SetTrigger("Jump");
-      
-       // _animator.SetBool("Running", _isRunning);
-        
     }
     
     private void SetRun(bool run)
@@ -133,15 +132,4 @@ public class LocoMotion : MonoBehaviour
         else
             speed = 1.5f;
     }
-
-    //private IEnumerator StartJump()
-    //{
-    //    //MidJump();
-    //    //while (_jumpAnim.isPlaying)
-    //    //{
-    //    //    yield return null;
-    //    //}
-    //    //MidJump();
-    //    yield return 0;
-    //}
 }
